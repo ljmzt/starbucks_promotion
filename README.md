@@ -24,7 +24,7 @@ Please see the myscore function in the notebook for exact calculation.
 
 ### My Approach
 
-I think the key is the identify the customers who will change to purchase if they receive the promotion (See promotion_strategy function). So the input X actually should contain V1-V7, plus Promotion.  I then use randomforest with standard gridsearch for tuning. 
+I think the key is the identify the customers who will change to purchase if they receive the promotion (See promotion_strategy function). So the input X actually should contain V1-V7, plus Promotion.  I then use randomforest as classifier, with "hand-written" stratifiedCV + gridsearch for tuning as the metrics are not the standard sklearn metrics. 
 
 ### Result
 
