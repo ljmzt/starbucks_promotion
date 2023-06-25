@@ -14,11 +14,18 @@ The uniqueness of this dataset is that it uses metrics that aren't that "normal"
 
 > Incremental Response Rate (IRR)  
 > IRR depicts how many more customers purchased the product with the promotion, as compared to if they didn't receive the promotion. Mathematically, it's the ratio of the number of purchasers in the promotion group to the total number of customers in the purchaser's group (treatment) minus the ratio of the number of purchasers in the non-promotional group to the total number of customers in the non-promotional group (control).
-$$
-  IRR = {purch_treat} \over {cust_treat} - {} \over {} 
-$$
 
 and
 
 > Net Incremental Revenue (NIR)  
 > NIR depicts how much is made (or lost) by sending out the promotion. Mathematically, this is 10 times the total number of purchasers that received the promotion minus 0.15 times the number of promotions sent out, minus 10 times the number of purchasers who were not given the promotion.
+
+Please see the myscore function in the notebook for exact calculation.
+
+### My Approach
+
+I think the key is the identify the customers who will change to purchase if they receive the promotion (See promotion_strategy function). So the input X actually should contain V1-V7, plus Promotion.  I then use randomforest with standard gridsearch for tuning. 
+
+### Result
+
+I manage to get an IRR ~0.02, and NIR ~390. The IRR is lower than the best score provided by Udacity (~0.1), but NIR is better than the best score (~300).
